@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>视频播放页面</title>
+    <link rel="stylesheet" href="video-page-styles.css"> <!-- 引入CSS文件 -->
+    <script>
+        function changeVideo() {
+            var select = document.getElementById('videoSelect');
+            var videoSource = select.options[select.selectedIndex].value;
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoSource;
+            videoPlayer.load(); // 重新加载视频源
+            videoPlayer.play();
+        }
+
+        
+        function addComment() {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value;
+            if (commentText) {
+                var commentList = document.getElementById('commentList');
+                var newComment = document.createElement('li');
+
+                // 创建评论内容
+                var commentContent = document.createElement('p');
+                commentContent.className = 'anonymous';
+                commentContent.textContent = '匿名用户：' + commentText;
+
+                // 创建评论日期
+                var commentDate = document.createElement('p');
+                commentDate.className = 'date';
+                commentDate.textContent = new Date().toLocaleDateString(); // 获取当前日期
+
+                // 添加样式
+                newComment.className = 'comment';
+                newComment.appendChild(commentContent);
+                newComment.appendChild(commentDate);
+                commentList.appendChild(newComment);
+
+                commentInput.value = ''; // 清空输入框
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>阳光视频</h1>
+    
+    <!-- <label for ="videoSelect">选择集数:</label> 
+    <select id="videoSelect" onchange="changeVideo()">
+        <option value="videos/video1.mp4">第1集</option> 
+        <option value="videos/video2.mp4">第2集</option> 
+        <option value="videos/video3.mp4">第3集</option> 
+         可以继续添加更多选集 
+    </select> -->
+    <div class="video-container">
+    <video id="videoPlayer" controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+        您的浏览器不支持HTML5视频标签。
+    </video>
+    <div class="video-description">
+        <img src="images/1.avif" alt="视频简介图片">
+        <h2>流水迢迢</h2>
+        <p>简介:
+            月落城主之子萧无瑕，忍辱负重潜伏椋国多年，化名为卫昭，背负佞臣骂名。卫昭为查清当年家族真相，试图掳走齐王案的唯一活口，但自己精心布置的计划却被突然出现的少女江慈所破坏。裴琰趁机将重伤的江慈养入府中，以求找到幕后“破坏者”。而卫昭的悲惨身世和民族大义也触动了天真烂漫的江慈
+            ，二人在相处中看到了彼此的闪光点，互生情愫。最终，卫昭、江慈、裴琰
+            三人放下私人恩怨，共同对抗椋帝，实现了守护月落，建立清明天下的愿望……</p> 
+            <label for ="videoSelect">选择集数:</label> 
+            <select id="videoSelect" onchange="changeVideo()">
+                <option value="videos/video1.mp4">第1集</option> 
+                <option value="videos/video1.mp4">第2集</option> 
+                <option value="videos/video1.mp4">第3集</option> 
+                <!-- 可以继续添加更多选集 -->
+            </select>   
+    </div>
+</div>
+<div class="container">
+<div class="comment-section">
+    <h2>评论区</h2>
+    <textarea id="commentInput" placeholder="输入您的评论..." rows="2" style="width:50%;"></textarea>
+    <button onclick="addComment()">发表评论</button>
+    <ul id="commentList" style="list-style-type: none; padding: 0;"></ul>
+</div>
+    <div class="related-section">
+        <h2>相关推荐</h2>
+        <ul>
+            <figure>
+                <img src="images/2.avif" alt="舍不得星星">
+                <figcaption>舍不得星星</figcaption>
+            </figure>
+            <figure>
+                <img src="images/3.avif" alt="藏海花">
+                <figcaption>藏海花</figcaption>
+            </figure>
+            <figure>
+                <img src="images/4.webp" alt="山花烂漫时">
+                <figcaption>山花烂漫时</figcaption>
+            </figure>
+        </ul>
+    </div>
+
+</div>
+    <div>
+        <a href="runoob.html" class="back-button">返回主页</a> <!-- 返回主页的链接 -->
+    </div>
+
+</body>
+</html>

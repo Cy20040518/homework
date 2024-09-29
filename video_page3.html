@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>视频播放页面</title>
+    <link rel="stylesheet" href="video-page-styles.css"> <!-- 引入CSS文件 -->
+    <script>
+        function changeVideo() {
+            var select = document.getElementById('videoSelect');
+            var videoSource = select.options[select.selectedIndex].value;
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoSource;
+            videoPlayer.load(); // 重新加载视频源
+            videoPlayer.play();
+        }
+
+        
+        function addComment() {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value;
+            if (commentText) {
+                var commentList = document.getElementById('commentList');
+                var newComment = document.createElement('li');
+
+                // 创建评论内容
+                var commentContent = document.createElement('p');
+                commentContent.className = 'anonymous';
+                commentContent.textContent = '匿名用户：' + commentText;
+
+                // 创建评论日期
+                var commentDate = document.createElement('p');
+                commentDate.className = 'date';
+                commentDate.textContent = new Date().toLocaleDateString(); // 获取当前日期
+
+                // 添加样式
+                newComment.className = 'comment';
+                newComment.appendChild(commentContent);
+                newComment.appendChild(commentDate);
+                commentList.appendChild(newComment);
+
+                commentInput.value = ''; // 清空输入框
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>阳光视频</h1>
+    
+    <!-- <label for ="videoSelect">选择集数:</label> 
+    <select id="videoSelect" onchange="changeVideo()">
+        <option value="videos/video1.mp4">第1集</option> 
+        <option value="videos/video2.mp4">第2集</option> 
+        <option value="videos/video3.mp4">第3集</option> 
+         可以继续添加更多选集 
+    </select> -->
+    <div class="video-container">
+    <video id="videoPlayer" controls>
+        <source src="videos/video3.mp4" type="video/mp4">
+        您的浏览器不支持HTML5视频标签。
+    </video>
+    <div class="video-description">
+        <img src="images/21.avif" alt="视频简介图片">
+        <h2>米奇妙妙屋 第一季</h2>
+        <p>简介:
+              迪士尼的《米奇妙妙屋》是首个专为学龄前儿童制作的米奇系列。本系列剧加插了大量互动问题，
+              鼓励小朋友们发挥想象力，同时认识新事物、学习新知识，让孩子在欢乐的气氛中学习数学、形状以及逻辑思考等基础能力，
+              是一部寓教于乐，适合父母与孩子共同欣赏的卡通系列。
+              在米奇妙妙屋里住着米老鼠米奇和他的女朋友米妮、以及他的朋友唐老鸭、黛西、高飞和布鲁托。米奇拥有一个神奇的妙妙工具箱，
+              每当遇到困难，只要大喊一声土豆它就会出现在眼前。而米奇和他的朋友们也在妙妙工具箱的帮助下，
+              解决了一个又一个的问题。比如帮助黛西找到走丢的十只小羊，帮助高飞学会舞会上要跳的舞蹈，
+            参加米妮举办的妙妙屋睡衣派对，一起参观米奇和唐老鸭的农场……每一集都有新鲜有趣的故事和精心设计的知识点陪伴着小朋友们。。</p> 
+            <label for ="videoSelect">选择集数:</label> 
+            <select id="videoSelect" onchange="changeVideo()">
+                <option value="videos/video3.mp4">第1集</option> 
+                <option value="videos/video3.mp4">第2集</option> 
+                <option value="videos/video3.mp4">第3集</option> 
+                <!-- 可以继续添加更多选集 -->
+            </select>   
+    </div>
+</div>
+<div class="container">
+<div class="comment-section">
+    <h2>评论区</h2>
+    <textarea id="commentInput" placeholder="输入您的评论..." rows="2" style="width:50%;"></textarea>
+    <button onclick="addComment()">发表评论</button>
+    <ul id="commentList" style="list-style-type: none; padding: 0;"></ul>
+</div>
+    <div class="related-section">
+        <h2>相关推荐</h2>
+        <ul>
+          <figure>
+            <a href="video_page2.html">
+            <img src="images/18.webp" alt="小猪佩奇全集">
+            <figcaption>小猪佩奇全集</figcaption>
+            </a>
+            </figure>
+            <figure>
+                <img src="images/19.jpg" alt="熊出没之秋日团团转">
+                <figcaption>熊出没之秋日团团转</figcaption>
+            </figure>
+            <figure>
+                <img src="images/20.webp" alt="汪汪队立大功全集">
+                <figcaption>汪汪队立大功全集</figcaption>
+            </figure>
+            
+
+        </ul>
+    </div>
+
+</div>
+    <div>
+        <a href="runoob.html" class="back-button">返回主页</a> <!-- 返回主页的链接 -->
+    </div>
+
+</body>
+</html>

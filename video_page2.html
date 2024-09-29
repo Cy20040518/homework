@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>视频播放页面</title>
+    <link rel="stylesheet" href="video-page-styles.css"> <!-- 引入CSS文件 -->
+    <script>
+        function changeVideo() {
+            var select = document.getElementById('videoSelect');
+            var videoSource = select.options[select.selectedIndex].value;
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoSource;
+            videoPlayer.load(); // 重新加载视频源
+            videoPlayer.play();
+        }
+
+        
+        function addComment() {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value;
+            if (commentText) {
+                var commentList = document.getElementById('commentList');
+                var newComment = document.createElement('li');
+
+                // 创建评论内容
+                var commentContent = document.createElement('p');
+                commentContent.className = 'anonymous';
+                commentContent.textContent = '匿名用户：' + commentText;
+
+                // 创建评论日期
+                var commentDate = document.createElement('p');
+                commentDate.className = 'date';
+                commentDate.textContent = new Date().toLocaleDateString(); // 获取当前日期
+
+                // 添加样式
+                newComment.className = 'comment';
+                newComment.appendChild(commentContent);
+                newComment.appendChild(commentDate);
+                commentList.appendChild(newComment);
+
+                commentInput.value = ''; // 清空输入框
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>阳光视频</h1>
+    
+    <!-- <label for ="videoSelect">选择集数:</label> 
+    <select id="videoSelect" onchange="changeVideo()">
+        <option value="videos/video1.mp4">第1集</option> 
+        <option value="videos/video2.mp4">第2集</option> 
+        <option value="videos/video3.mp4">第3集</option> 
+         可以继续添加更多选集 
+    </select> -->
+    <div class="video-container">
+    <video id="videoPlayer" controls>
+        <source src="videos/video2.mp4" type="video/mp4">
+        您的浏览器不支持HTML5视频标签。
+    </video>
+    <div class="video-description">
+        <img src="images/18.webp" alt="视频简介图片">
+        <h2>小猪佩奇全集</h2>
+        <p>简介:
+            《小猪佩奇》是一部针对学龄前儿童的动画片，讲述的是一只名叫佩奇的可爱小猪的故事。
+            四岁的佩奇和她的妈妈、爸爸以及弟弟乔治生活在一起。 动画中小猪佩奇和她的家人、朋友们进行了很多新奇有趣，
+            之前从未体验过的活动，不论是观察猫头鹰、徒步登山，还是建造虫子旅馆、玩飞盘，
+            都向小朋友们展示了富有探索精神的生活态度。</p> 
+            <label for ="videoSelect">选择集数:</label> 
+            <select id="videoSelect" onchange="changeVideo()">
+                <option value="videos/video2.mp4">第1集</option> 
+                <option value="videos/video2.mp4">第2集</option> 
+                <option value="videos/video2.mp4">第3集</option> 
+                <!-- 可以继续添加更多选集 -->
+            </select>   
+    </div>
+</div>
+<div class="container">
+<div class="comment-section">
+    <h2>评论区</h2>
+    <textarea id="commentInput" placeholder="输入您的评论..." rows="2" style="width:50%;"></textarea>
+    <button onclick="addComment()">发表评论</button>
+    <ul id="commentList" style="list-style-type: none; padding: 0;"></ul>
+</div>
+    <div class="related-section">
+        <h2>相关推荐</h2>
+        <ul>
+            <figure>
+                <img src="images/19.jpg" alt="熊出没之秋日团团转">
+                <figcaption>熊出没之秋日团团转</figcaption>
+            </figure>
+            <figure>
+                <img src="images/20.webp" alt="汪汪队立大功全集">
+                <figcaption>汪汪队立大功全集</figcaption>
+            </figure>
+            <figure>
+                <a href="video_page3.html">
+                <img src="images/21.avif" alt="米奇妙妙屋 第一季">
+                <figcaption>米奇妙妙屋 第一季</figcaption>
+            </a>
+            </figure>
+        </ul>
+    </div>
+
+</div>
+    <div>
+        <a href="runoob.html" class="back-button">返回主页</a> <!-- 返回主页的链接 -->
+    </div>
+
+</body>
+</html>

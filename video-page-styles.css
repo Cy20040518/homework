@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #160417;
+    text-align: center;
+    color: white;
+    justify-content: center;
+}
+
+h1 {
+    background-image: url(images/logo.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    margin-bottom: 20px;
+    text-indent:-9999px;
+}
+.video-container {
+    display: flex; /* 横向排列 */
+    max-width: 100%; /* 最大宽度 */
+    width: 100%; /* 容器宽度为100% */
+}
+
+
+video {
+    width: 80%; /* 自适应宽度 */
+    height:auto;
+    max-width: 100%; /* 设置最大宽度 */
+    max-height: 100%;
+    margin-bottom: 20px; /* 视频与其他元素之间的间距 */
+    margin-top: 20px;
+    margin-right:20px;
+}
+.video-description {
+    width: 300px; /* 简介部分宽度 */
+    padding: 10px; /* 内边距 */
+    border: 1px solid white; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: rgba(29, 3, 30, 0.1); /* 背景色带透明度 */
+    margin-left: 20px; /* 左侧间距 */
+}
+.video-description img {
+    max-width: 100%; /* 确保图片适应容器 */
+    height: auto; /* 高度自动 */
+    margin-bottom: 10px; /* 图片与文字间距 */
+}
+.container{
+    display:flex;
+}
+
+.related-section {
+    width: 19%; /* 设置相关推荐部分的固定宽度 */
+    border: 1px transparent #ccc; /* 边框样式 */
+    padding: 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+}
+.related-section h2 {
+    margin-left:1px;
+}
+img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    width:100%;
+    margin:0 auto;
+    display:block;
+}
+div ul {
+    list-style: none;
+    padding: 0;
+  
+}
+
+div ul li {
+   
+    margin: 0 35px;
+    font-size:large;
+
+}
+
+div ul li a {
+    
+    color: #fff;
+    text-decoration: none;
+
+;
+
+}
+div ul a{
+    color: #fff;
+    text-decoration: none;
+}
+.comment-section {
+    max-width: 78%;
+    margin-top: 20px; /* 评论区与视频下方的间距 */
+    background-color: rgba(29, 3, 30, 0.1); /* 背景色 */
+    padding: 10px; /* 内边距 */
+    border: 1px transparent; /* 透明边框 */
+    border-radius: 5px; /* 圆角 */
+    text-align: left;
+    flex:1;
+   
+}
+.comment-section h2 {
+    margin: 0 0 10px; /* 标题与评论区的间距 */
+    text-align: left;
+}
+
+.anonymous {
+    font-style: italic; /* 斜体 */
+    color: #f7efef; /* 字体颜色 */
+    margin: 0; /* 消除默认的外边距 */
+}
+.date {
+    max-width: 54%;
+    text-align: right; /* 右对齐 */
+    font-size: 0.8em; /* 字体大小 */
+    color: #888; /* 字体颜色 */
+    margin: 0; /* 消除默认的外边距 */
+}
+.comment-section button {
+    background-color: #14052209; /* 按钮背景颜色 */
+    color: white; /* 按钮字体颜色 */
+    border: none; /* 去掉边框 */
+    padding: 10px 15px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停样式 */
+    font-size:18px;
+    margin:10px;
+    
+}
+
+.comment-section button:hover {
+    background-color: #270632; /* 鼠标悬停效果 */
+}
+
+.comment-section ul {
+    margin-top: 10px; /* 评论列表与按钮的间距 */
+    padding-left: 0; /* 去掉左侧填充 */
+}
+.back-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color:#1b021e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #270632;
+}

@@ -1,0 +1,135 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #0a0110;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+     
+
+}
+header h1{
+    background-image: url(images/logo.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    margin-bottom:20px;
+
+    text-indent:-9999px;
+
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+  
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 35px;
+    font-size:large;
+
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+
+;
+
+}
+nav ul li a:hover {
+    text-decoration: underline;
+   
+}
+.TV {
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+
+}
+.movies{
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+}
+.zongyi{
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+}
+.anime{
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+}
+.cartoon{
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+}
+.documentary{
+    background-color: #0b0111;
+    color:#12031b;
+    display:flex;
+    justify-content: center;
+
+}
+img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    width:150px;
+    margin:8px;
+}
+figcaption{
+    color:#fff;
+    margin-bottom:20px;
+    margin-left:10px;
+}
+
+h2{
+    color:#fff;
+    background-color: #07000b;
+    padding: 0%;
+    font-style: italic;
+    font-size:15px;
+    margin-top:7px;
+    margin-right: 2%;
+    margin-left:4vw;
+  
+}
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+
+}
+
+footer {
+    background: #07000b;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
